@@ -9,11 +9,18 @@
 			text = '';
 		}
 	};
+
+	const handleKeyPress = (event) => {
+		if (event.keyCode === 13) {
+			addTask();
+		}
+	};
 </script>
 
 <div class="todo__main__add-field">
 	<input
 		bind:value={text}
+		on:keypress={handleKeyPress}
 		class="todo__main__add-field-input"
 		type="text"
 		placeholder="Enter task"
